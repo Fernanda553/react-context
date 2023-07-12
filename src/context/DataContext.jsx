@@ -6,10 +6,13 @@ export const DataProvider = ({ children }) => {
   const endpoint = photos;
 
   const [data, setData] = useState(endpoint);
+  const [selector, setSelector] = useState({});
 
   const allState = {
     data,
     setData,
+    selector,
+    setSelector,
   };
 
   return (
