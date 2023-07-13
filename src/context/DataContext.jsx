@@ -1,21 +1,5 @@
-import { createContext, useState } from "react";
-import { photos } from "../../public/fotos.json";
-export const DataContext = createContext({});
+import { createContext } from "react";
 
-export const DataProvider = ({ children }) => {
-  const endpoint = photos;
+export const DataProvider = createContext({});
 
-  const [data, setData] = useState(endpoint);
-  const [selector, setSelector] = useState({});
-
-  const allState = {
-    data,
-    setData,
-    selector,
-    setSelector,
-  };
-
-  return (
-    <DataContext.Provider value={allState}>{children}</DataContext.Provider>
-  );
-};
+export default DataProvider;

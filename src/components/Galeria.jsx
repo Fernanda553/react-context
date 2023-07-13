@@ -3,21 +3,21 @@ import "../assets/css/galeria.css";
 import Heart from "./Heart";
 import { DataContext } from "../context/DataContext";
 
-export default function Home() {
-  const { data, selector, setSelector } = useContext(DataContext);
+export default function Galeria() {
+  const { data, setData } = useContext(DataContext);
 
-  const changeLiked = (image) => {
-    image.liked = true;
-    setSelector([...data, image]);
-    console.log(selector);
+  const changeLiked = (id) => {
+    const likedPhoto = data.findIndex((image) => image.id === id);
+    data[likedPhoto].liked = !data[likedPhoto].liked;
+
+    setData([...data]);
   };
 
   return (
     <div className="galeria grid-columns-5 p-3">
       {data.map((image) => (
         <div
-          onClick={changeLiked}
-          value={selector}
+          onClick={() => changeLiked(image.id)}
           key={image.id}
           className="foto"
           style={{ backgroundImage: `url(${image.src.original})` }}
