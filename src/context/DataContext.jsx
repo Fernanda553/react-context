@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-export const DataProvider = createContext({});
+const DataProvider = createContext({});
 
 export default DataProvider;

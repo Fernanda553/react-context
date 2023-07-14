@@ -1,8 +1,8 @@
 import "./main.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
 
+import Navigation from "./components/Navigation";
 import Home from "./views/Home";
 import Favoritos from "./views/Favoritos";
 import DataProvider from "./context/DataContext";

@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import "../assets/css/galeria.css";
 import Heart from "./Heart";
-import { DataContext } from "../context/DataContext";
+import DataProvider from "../context/DataContext";
 
 export default function Galeria() {
-  const { data, setData } = useContext(DataContext);
+  const { data, setData } = useContext(DataProvider);
 
   const changeLiked = (id) => {
     const likedPhoto = data.findIndex((image) => image.id === id);

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
+import DataProvider from "../context/DataContext";
 
 export default function Favoritos() {
-  const { data } = useContext(DataContext);
+  const { data } = useContext(DataProvider);
 
   return (
     <>
@@ -15,9 +15,7 @@ export default function Favoritos() {
               key={image.id}
               className="foto"
               style={{ backgroundImage: `url(${image.src.original})` }}
-            >
-              <h4>{image.alt}</h4>
-            </div>
+            ></div>
           ))}
       </div>
     </>
